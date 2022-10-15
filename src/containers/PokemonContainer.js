@@ -23,6 +23,18 @@ const PokemonContainer = () => {
         window.scrollTo(0, 0);
     }
 
+    Array.prototype.random = function () {
+        return this[Math.floor((Math.random()*this.length))];
+    }
+
+    const onArrowClick = function(){
+        // get random pokemon from pokemon list
+        const pokemonToChoose = pokemon.random();
+        setSelectedPokemon(pokemonToChoose);
+        window.scrollTo(0, 0);
+    }
+    
+
     if(selectedPokemon){
 
         // console.log("IN HERE ")
@@ -47,7 +59,7 @@ const PokemonContainer = () => {
     return( 
         <div className="container">
             { selectedPokemon ? 
-            <PokemonDetail selectedPokemonData={selectedPokemonData} 
+            <PokemonDetail selectedPokemonData={selectedPokemonData}  onArrowClick={onArrowClick}
             // spritesBackDefault={selectedPokemonData.sprites.back_default}
             /> : null }
 

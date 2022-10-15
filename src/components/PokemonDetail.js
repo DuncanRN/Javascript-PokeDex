@@ -1,6 +1,6 @@
 import React from "react";
 
-const PokemonDetail = ({selectedPokemonData}) => {
+const PokemonDetail = ({selectedPokemonData, onArrowClick}) => {
     
     // console.log("selectedPokemonData is - ")
     // console.table(selectedPokemonData);
@@ -8,20 +8,27 @@ const PokemonDetail = ({selectedPokemonData}) => {
 
     // const upperName =selectedPokemonData.name[0].toUpperCase;
 
+    const handleClick = function() {
+        onArrowClick()
+        
+    };
+
+    const pokemonName = selectedPokemonData.name.toUpperCase();
+
     return (
         <div className="detail">
-            <div className="arrow" > &#8592;
+            <div className="arrow"  onClick={handleClick}> &#8592;
             </div>
             <div className="detail_text" >
-                <h3><b>ID : </b>{selectedPokemonData.id}</h3>
-                <h3><b>name: </b>{selectedPokemonData.name} </h3>
+                <h4><b>ID : </b>{selectedPokemonData.id}</h4>
+                <h4><b>name: </b>{pokemonName} </h4>
 
             {/* { console.table(selectedPokemonData) } */}
              {/* <h3><b>Sprites: </b>{selectedPokemonData["stats"]["stat"]["name"]}</h3>  */}
             
-                <h3><b>Base XP : </b>{selectedPokemonData.base_experience}</h3>
-                <h3><b>Height : </b>{selectedPokemonData.height}</h3>
-                <h3><b>Weight : </b>{selectedPokemonData.weight}</h3>
+                <h4><b>Base XP : </b>{selectedPokemonData.base_experience}</h4>
+                <h4><b>Height : </b>{selectedPokemonData.height}</h4>
+                <h4><b>Weight : </b>{selectedPokemonData.weight}</h4>
             </div>
             {/* <img src={ `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${PokemonNumber}.png` }></img> */}
             <div className="detail_image" >
@@ -34,7 +41,7 @@ const PokemonDetail = ({selectedPokemonData}) => {
 }</h3>  */}
 
 
-            <div className="arrow"> &#8594;  </div>
+            <div className="arrow"  onClick={handleClick}> &#8594;  </div>
         </div>
     )
 }
