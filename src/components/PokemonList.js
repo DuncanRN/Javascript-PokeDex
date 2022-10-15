@@ -12,10 +12,10 @@ const PokemonList =({pokemon, onPokemonClick}) => {
     })
 
     return (
-        <div>
-            <ul>
+        <div className="list">
+            {/* <ul> */}
                 {PokemonItems}
-            </ul>
+            {/* </ul> */}
         </div>
     )
 

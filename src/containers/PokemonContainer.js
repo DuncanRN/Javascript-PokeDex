@@ -12,16 +12,15 @@ const PokemonContainer = () => {
     }, []); 
 
     const getPokemon = function(){
-        fetch('https://pokeapi.co/api/v2/pokemon/')
+        fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151')
         .then(res => res.json())
         .then(pokemon => setPokemon(pokemon.results))
     };
 
-    
-
     const onPokemonClick = function(pokemon){
         // console.log("in the click");
         setSelectedPokemon(pokemon);
+        window.scrollTo(0, 0);
     }
 
     if(selectedPokemon){
@@ -46,7 +45,7 @@ const PokemonContainer = () => {
 
 
     return( 
-        <div>
+        <div className="container">
             { selectedPokemon ? 
             <PokemonDetail selectedPokemonData={selectedPokemonData} 
             // spritesBackDefault={selectedPokemonData.sprites.back_default}

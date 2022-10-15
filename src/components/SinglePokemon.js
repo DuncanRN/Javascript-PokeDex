@@ -8,16 +8,27 @@ const SinglePokemon = ({singlePokemon, onPokemonClick}) => {
 
     const handleClick = function() {
         onPokemonClick(singlePokemon)
+        
     };
 
     return (
         <>
-        <li >
-            <div className="pokemon_name"  onClick={handleClick}>{ PokemonNumber } : {singlePokemon.name} </div>
+        {/* <li > */}
+            <div className="pokemon_name"  onClick={handleClick} >
+
+            {/* onclick="doSomething();doSomethingElse();" */}
+
+
+                <img src={ `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${PokemonNumber}.png` }></img>
+                    
+                {/* { PokemonNumber } :  */}
+                {singlePokemon.name} 
+                
+
             {/* <div className="pokemon_url" >{singlePokemon.url} </div> */}
             {/* <div className="pokemon_url" > </div> */}
-            <div className="pokemon_image" ><img src={ `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${PokemonNumber}.png` }></img></div>
-        </li>
+            </div>
+        {/* </li> */}
         </>
     )
 }
