@@ -10,7 +10,7 @@ const PokemonDetail = ({selectedPokemonData}) => {
 
     return (
         <div className="detail">
-            <div className="arrow"> &#8592;
+            <div className="arrow" > &#8592;
             </div>
             <div className="detail_text" >
                 <h3><b>ID : </b>{selectedPokemonData.id}</h3>
