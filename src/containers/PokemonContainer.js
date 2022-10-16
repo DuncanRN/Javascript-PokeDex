@@ -17,9 +17,14 @@ const PokemonContainer = () => {
         .then(pokemon => setPokemon(pokemon.results))
     };
 
-    const onPokemonClick = function(pokemon){
+    const onPokemonClick = function(pokemonID){
         // console.log("in the click");
-        setSelectedPokemon(pokemon);
+        // now this will take in pokemonID
+
+        // const endOfURL = pokemon.url.slice(-5)
+        // const pokemonID = endOfURL.replace(/\D/g, "");
+
+        setSelectedPokemon(pokemonID);
         window.scrollTo(0, 0);
     }
 
@@ -32,17 +37,26 @@ const PokemonContainer = () => {
     const onRandomClick = function(){
         // get random pokemon from pokemon list
         const pokemonToChoose = pokemon.random();
-        setSelectedPokemon(pokemonToChoose);
+        
+        const endOfURL = pokemonToChoose.url.slice(-5)
+        const pokemonID = endOfURL.replace(/\D/g, "");
+
+        setSelectedPokemon(pokemonID);
         window.scrollTo(0, 0);
     }
     
 
     if(selectedPokemon){
 
-        // console.log("IN HERE ")
-        const endOfURL = selectedPokemon.url.slice(-5)
-        const PokemonNumber = endOfURL.replace(/\D/g, "");
-        const urlForSelected = `https://pokeapi.co/api/v2/pokemon/${PokemonNumber}/`;
+        console.log("IN if selectedPokemon HERE ")
+        console.log(selectedPokemon);
+
+
+        // const endOfURL = selectedPokemon.url.slice(-5)
+        // const PokemonNumber = endOfURL.replace(/\D/g, "");
+        // const urlForSelected = `https://pokeapi.co/api/v2/pokemon/${PokemonNumber}/`;
+
+        const urlForSelected = `https://pokeapi.co/api/v2/pokemon/${selectedPokemon}/`;
         // console.log("urlForSelected is - ")
         // console.log(urlForSelected);
         fetch(urlForSelected)
@@ -51,7 +65,6 @@ const PokemonContainer = () => {
 
         // console.log("selectedPokemonData is - ")
         // console.table(selectedPokemonData);
-        
         
         
     }
@@ -66,7 +79,7 @@ const PokemonContainer = () => {
             </div>
 
             { selectedPokemon ? 
-            <PokemonDetail selectedPokemonData={selectedPokemonData}  onRandomClick={onRandomClick}
+            <PokemonDetail selectedPokemonData={selectedPokemonData}  onRandomClick={onRandomClick} onPokemonClick={onPokemonClick}
             // spritesBackDefault={selectedPokemonData.sprites.back_default}
             /> : null }
 

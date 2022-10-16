@@ -7,8 +7,18 @@ const SinglePokemon = ({singlePokemon, onPokemonClick}) => {
 
 
     const handleClick = function() {
-        onPokemonClick(singlePokemon)
-        
+        // got to change get the ID from singlePokemon to pass to onPokemonClick
+
+        const endOfURL = singlePokemon.url.slice(-5)
+        const pokemonID = endOfURL.replace(/\D/g, "");
+
+        // console.log("")
+        // console.log("handling click")
+        // console.log("")
+        // console.log("")
+
+
+        onPokemonClick(pokemonID)
     };
 
     return (

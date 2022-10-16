@@ -10,20 +10,21 @@ body{
 
 .detail{
   display:grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
 }
 
 .arrow{
   font-size: 80px;
   text-align: center;
-  text-shadow: 2px 2px rgb(85, 97, 97);
+  text-shadow: 2px 2px rgb(251, 232, 206);
 }
 
 .title {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(184, 240, 240);;
+  color: rgb(255, 187, 0);;
   background-color: rgb(2, 65, 65);
   margin: 0;
   padding: 20px;
@@ -42,8 +43,17 @@ img {
 .random-button img{
   max-width:70px;
   max-height:70px;
+  padding: 10px;
 
 }
+
+.random-button img:hover {
+
+  
+  box-shadow: 0px 0px 0px 1px rgba(255, 150, 4, 0.544), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
 
 .detail_image img {
   display: block;
@@ -133,11 +143,13 @@ img {
   background-color: white;
   box-shadow: 5px 5px 5px #aaaaaa;
 
+
+
   padding: 12px;
   background-color: teal;
   margin: 32px;
 
   border: 1px solid rgb(138, 179, 179);
-  box-shadow: 3px 3px 3px 3px rgb(8, 47, 47);
+  box-shadow: 3px 3px 3px 3px  rgb(8, 47, 47);
 
 }
