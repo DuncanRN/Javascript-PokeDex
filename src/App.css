@@ -39,6 +39,12 @@ img {
   height: auto;
 }
 
+.random-button img{
+  max-width:70px;
+  max-height:70px;
+
+}
+
 .detail_image img {
   display: block;
   min-height:230px;

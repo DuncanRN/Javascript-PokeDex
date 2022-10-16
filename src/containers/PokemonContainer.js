@@ -27,7 +27,9 @@ const PokemonContainer = () => {
         return this[Math.floor((Math.random()*this.length))];
     }
 
-    const onArrowClick = function(){
+
+
+    const onRandomClick = function(){
         // get random pokemon from pokemon list
         const pokemonToChoose = pokemon.random();
         setSelectedPokemon(pokemonToChoose);
@@ -55,11 +57,16 @@ const PokemonContainer = () => {
     }
 
 
-
     return( 
         <div className="container">
+            <div className="random-button"  onClick={onRandomClick}>
+            <img src={require('./dice.png')} height="20"  width="10"  />
+                
+            
+            </div>
+
             { selectedPokemon ? 
-            <PokemonDetail selectedPokemonData={selectedPokemonData}  onArrowClick={onArrowClick}
+            <PokemonDetail selectedPokemonData={selectedPokemonData}  onRandomClick={onRandomClick}
             // spritesBackDefault={selectedPokemonData.sprites.back_default}
             /> : null }
 

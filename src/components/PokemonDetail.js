@@ -1,6 +1,6 @@
 import React from "react";
 
-const PokemonDetail = ({selectedPokemonData, onArrowClick}) => {
+const PokemonDetail = ({selectedPokemonData, onRandomClick}) => {
     
     // console.log("selectedPokemonData is - ")
     // console.table(selectedPokemonData);
@@ -8,8 +8,8 @@ const PokemonDetail = ({selectedPokemonData, onArrowClick}) => {
 
     // const upperName =selectedPokemonData.name[0].toUpperCase;
 
-    const handleClick = function() {
-        onArrowClick()
+    const handleRandomClick = function() {
+        onRandomClick()
         
     };
 
@@ -19,7 +19,7 @@ const PokemonDetail = ({selectedPokemonData, onArrowClick}) => {
 
     return (
         <div className="detail">
-            <div className="arrow"  onClick={handleClick}> &#8592;
+            <div className="arrow"  onClick={handleRandomClick}> &#8592;
             </div>
             <div className="detail_text" >
                 <h2><b> </b>{pokemonName} </h2>
@@ -44,7 +44,7 @@ const PokemonDetail = ({selectedPokemonData, onArrowClick}) => {
 }</h3>  */}
 
 
-            <div className="arrow"  onClick={handleClick}> &#8594;  </div>
+            <div className="arrow"  onClick={handleRandomClick}> &#8594;  </div>
         </div>
     )
 }
