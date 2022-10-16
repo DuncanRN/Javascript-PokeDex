@@ -13,15 +13,18 @@ const PokemonDetail = ({selectedPokemonData, onArrowClick}) => {
         
     };
 
-    const pokemonName = selectedPokemonData.name.toUpperCase();
+    // const pokemonName = selectedPokemonData.name.toUpperCase();
+
+    const pokemonName = selectedPokemonData.name;
 
     return (
         <div className="detail">
             <div className="arrow"  onClick={handleClick}> &#8592;
             </div>
             <div className="detail_text" >
+                <h2><b> </b>{pokemonName} </h2>
                 <h4><b>ID : </b>{selectedPokemonData.id}</h4>
-                <h4><b>name: </b>{pokemonName} </h4>
+                
 
             {/* { console.table(selectedPokemonData) } */}
              {/* <h3><b>Sprites: </b>{selectedPokemonData["stats"]["stat"]["name"]}</h3>  */}
