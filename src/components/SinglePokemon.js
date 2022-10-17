@@ -29,7 +29,7 @@ const SinglePokemon = ({singlePokemon, onPokemonClick}) => {
             {/* onclick="doSomething();doSomethingElse();" */}
 
 
-                <img src={ `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${PokemonNumber}.png` }></img>
+                <img src={ `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${PokemonNumber}.png` }></img>
                     
                 {/* { PokemonNumber } :  */}
                 {singlePokemon.name} 

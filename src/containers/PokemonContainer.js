@@ -5,7 +5,7 @@ import PokemonDetail from '../components/PokemonDetail'
 const PokemonContainer = () => {
     const [pokemon, setPokemon] = useState([]);
     const [selectedPokemon, setSelectedPokemon] = useState(null);
-    const [selectedPokemonData, setSelectedPokemonData] = useState([]);
+    const [selectedPokemonData, setSelectedPokemonData] = useState(null);
 
     useEffect(() => {
         getPokemon();
@@ -78,18 +78,17 @@ const PokemonContainer = () => {
             
             </div>
 
-            { selectedPokemon ? 
+            { selectedPokemonData ? 
             <PokemonDetail selectedPokemonData={selectedPokemonData}  onRandomClick={onRandomClick} onPokemonClick={onPokemonClick}
             // spritesBackDefault={selectedPokemonData.sprites.back_default}
             /> : null }
 
             <PokemonList pokemon={pokemon}  onPokemonClick={onPokemonClick}/>
-            
 
         </div>
         );
-
-
+    
+        // { selectedPokemonData ? 
 }
 
 
