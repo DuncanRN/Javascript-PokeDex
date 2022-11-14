@@ -1,3 +1,7 @@
+
+![Pokemon Pokedex Screenshot](https://github.com/DuncanRN/Javascript-PokeDex/blob/main/src/img_screenshots/Poke1.jpg?raw=true)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
