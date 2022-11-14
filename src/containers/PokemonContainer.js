@@ -18,12 +18,6 @@ const PokemonContainer = () => {
     };
 
     const onPokemonClick = function(pokemonID){
-        // console.log("in the click");
-        // now this will take in pokemonID
-
-        // const endOfURL = pokemon.url.slice(-5)
-        // const pokemonID = endOfURL.replace(/\D/g, "");
-
         setSelectedPokemon(pokemonID);
         window.scrollTo(0, 0);
     }
@@ -68,7 +62,6 @@ const PokemonContainer = () => {
         
         
     }
-
 
     return( 
         <div className="container">
